@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScholarLink - Scholarships</title>
+    <!-- Add SEO Meta Tags -->
+    <meta name="description"
+        content="Explore a comprehensive list of government and private scholarships designed to help students fund their education.">
+    <!-- Google Fonts for Modern Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <nav class="navbar" id="scholarships-nav">
+        <div class="logo">ScholarLink</div>
+        <button class="hamburger" id="hamburger" aria-label="Toggle Navigation">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index.html" id="nav-home">Home</a></li>
+            <li><a href="scholarships.html" class="active" id="nav-scholarships">Scholarships</a></li>
+            <li><button class="theme-btn" id="theme-toggle" aria-label="Toggle Theme">🌞</button></li>
+        </ul>
+    </nav>
+    <main class="container">
+        <div class="page-header fade-in" id="scholarships-header">
+            <h1>Available Scholarships</h1>
+            <p>Explore opportunities categorized for your convenience. Your journey begins here.</p>
+        </div>
+
+        <!-- Government Scholarships Section -->
+        <section class="scholarships-section slide-up" id="gov-scholarships">
+            <h2 class="section-title">Government Scholarships</h2>
+            <div class="card-grid" id="gov-grid">
+                <!-- Example Card for User to Duplicate -->
+                <div class="scholarship-card gov-card">
+                    <h3>Title of Government Scholarship</h3>
+                    <p>Details about the scholarship criteria, deadlines, and benefits will be added here...</p>
+                    <button class="btn btn-gov" id="btn-gov-1">Learn More</button>
+                </div>
+                <!-- Example Card for User to Duplicate -->
+                <div class="scholarship-card gov-card">
+                    <h3>Another Government Grant</h3>
+                    <p>Details about the scholarship criteria, deadlines, and benefits will be added here...</p>
+                    <button class="btn btn-gov" id="btn-gov-2">Learn More</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Private Scholarships Section -->
+        <section class="scholarships-section slide-up delay-1" id="private-scholarships">
+            <h2 class="section-title">Private Scholarships</h2>
+            <div class="card-grid" id="private-grid">
+                <!-- Example Card for User to Duplicate -->
+                <div class="scholarship-card private-card">
+                    <h3>Title of Private Scholarship</h3>
+                    <p>Details about the scholarship criteria, deadlines, and benefits will be added here...</p>
+                    <button class="btn btn-private" id="btn-private-1">Learn More</button>
+                </div>
+                <!-- Example Card for User to Duplicate -->
+                <div class="scholarship-card private-card">
+                    <h3>Corporate Sponsorship</h3>
+                    <p>Details about the scholarship criteria, deadlines, and benefits will be added here...</p>
+                    <button class="btn btn-private" id="btn-private-2">Learn More</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const root = document.documentElement;
+
+        // Check for saved theme
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            root.setAttribute('data-theme', savedTheme);
+            themeToggleBtn.textContent = savedTheme === 'light' ? '🌙' : '🌞';
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            const currentTheme = root.getAttribute('data-theme') || 'dark';
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            root.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            themeToggleBtn.textContent = newTheme === 'light' ? '🌙' : '🌞';
+        });
+
+        // Mobile Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+    </script>
+</body>
+
+</html>

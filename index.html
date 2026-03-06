@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScholarLink - Home</title>
+    <!-- Add SEO Meta Tags -->
+    <meta name="description"
+        content="ScholarLink is a platform designed to simplify your search for scholarships and financial aid, providing easy access to government and private funding opportunities.">
+    <!-- Google Fonts for Modern Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <nav class="navbar" id="main-nav">
+        <div class="logo">ScholarLink</div>
+        <button class="hamburger" id="hamburger" aria-label="Toggle Navigation">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index.html" class="active" id="nav-home">Home</a></li>
+            <li><a href="scholarships.html" id="nav-scholarships">Scholarships</a></li>
+            <li><button class="theme-btn" id="theme-toggle" aria-label="Toggle Theme">🌞</button></li>
+        </ul>
+    </nav>
+    <main class="container">
+        <section class="hero-section fade-in" id="hero">
+            <h1>Empowering Your Educational Future</h1>
+            <p>Discover endless opportunities to fund your education. We bridge the gap between ambitious students and
+                the perfect financial aid.</p>
+        </section>
+
+        <section class="about-section slide-up" id="about">
+            <h2>Why This Website?</h2>
+            <div class="about-card" id="about-card-content">
+                <p>Navigating the sea of scholarship opportunities can be overwhelming and confusing. Too many brilliant
+                    students miss out on funding simply because they don't know where to look or feel discouraged by the
+                    scattered information across the internet.</p>
+                <p>This platform was created with a singular, focused mission: to simplify your search for financial
+                    aid. Whether you are looking for secure government grants or specialized private funding, we've
+                    organized everything in one clean, accessible place. We want you to spend less time searching and
+                    more time focusing on what truly matters—your education and your future.</p>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const root = document.documentElement;
+
+        // Check for saved theme
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            root.setAttribute('data-theme', savedTheme);
+            themeToggleBtn.textContent = savedTheme === 'light' ? '🌙' : '🌞';
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            const currentTheme = root.getAttribute('data-theme') || 'dark';
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            root.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            themeToggleBtn.textContent = newTheme === 'light' ? '🌙' : '🌞';
+        });
+
+        // Mobile Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+    </script>
+</body>
+
+</html>
