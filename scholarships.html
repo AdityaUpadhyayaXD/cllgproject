@@ -5,11 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ScholarLink - Scholarships</title>
-    <!-- Add SEO Meta Tags -->
     <meta name="description"
-        content="Explore a comprehensive list of government and private scholarships designed to help students fund their education.">
-    <!-- Google Fonts for Modern Typography -->
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+        content="Explore a comprehensive list of government and private scholarships in India. Filter by eligibility, income, and class level to find the perfect scholarship for you.">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -25,55 +23,726 @@
             <li><a href="index.html" id="nav-home">Home</a></li>
             <li><a href="scholarships.html" class="active" id="nav-scholarships">Scholarships</a></li>
             <li><button class="theme-btn" id="theme-toggle" aria-label="Toggle Theme">🌞</button></li>
-            <li><a href="auth.html" id="nav-profile" class="profile-icon" aria-label="Authenticaion">👤</a></li>
+            <li><a href="auth.html" id="nav-profile" class="profile-icon" aria-label="Authentication">👤</a></li>
         </ul>
     </nav>
+
     <main class="container">
         <div class="page-header fade-in" id="scholarships-header">
             <h1>Available Scholarships</h1>
-            <p>Explore opportunities categorized for your convenience. Your journey begins here.</p>
+            <p>Explore real government scholarship opportunities in India. Use the filters below to find the ones you qualify for.</p>
         </div>
 
-        <!-- Government Scholarships Section -->
-        <section class="scholarships-section slide-up" id="gov-scholarships">
-            <h2 class="section-title">Government Scholarships</h2>
-            <div class="card-grid" id="gov-grid">
-                <!-- Example Card for User to Duplicate -->
-                <div class="scholarship-card gov-card">
-                    <h3>Title of Government Scholarship</h3>
-                    <p>Details about the scholarship criteria, deadlines, and benefits will be added here...</p>
-                    <button class="btn btn-gov" id="btn-gov-1">Learn More</button>
+        <!-- ── ELIGIBILITY FILTER PANEL ── -->
+        <section class="filter-panel slide-up" id="filter-panel" aria-label="Filter Scholarships">
+            <div class="filter-header">
+                <span class="filter-icon">🎯</span>
+                <h2>Check Your Eligibility</h2>
+                <p>Answer a few quick questions to see which scholarships match you.</p>
+            </div>
+            <div class="filter-grid filter-grid-6">
+                <!-- Annual Family Income -->
+                <div class="filter-group">
+                    <label class="filter-label" for="filter-income">
+                        <span class="filter-label-icon">💰</span> Annual Family Income
+                    </label>
+                    <select id="filter-income" class="filter-select">
+                        <option value="">— Select Income —</option>
+                        <option value="below-150000">Below ₹1,50,000</option>
+                        <option value="150000-250000">₹1,50,000 – ₹2,50,000</option>
+                        <option value="250000-350000">₹2,50,000 – ₹3,50,000</option>
+                        <option value="350000-450000">₹3,50,000 – ₹4,50,000</option>
+                        <option value="above-450000">Above ₹4,50,000</option>
+                    </select>
                 </div>
-                <!-- Example Card for User to Duplicate -->
-                <div class="scholarship-card gov-card">
-                    <h3>Another Government Grant</h3>
-                    <p>Details about the scholarship criteria, deadlines, and benefits will be added here...</p>
-                    <button class="btn btn-gov" id="btn-gov-2">Learn More</button>
+
+                <!-- Study Level -->
+                <div class="filter-group">
+                    <label class="filter-label" for="filter-class">
+                        <span class="filter-label-icon">📚</span> Study Level
+                    </label>
+                    <select id="filter-class" class="filter-select">
+                        <option value="">— Select Level —</option>
+                        <option value="pre-matric">Class I – VIII (Pre-Matric)</option>
+                        <option value="class9-12">Class IX – XII</option>
+                        <option value="ug">Undergraduate (UG)</option>
+                        <option value="pg">Postgraduate (PG)</option>
+                        <option value="phd">M.Phil. / Ph.D.</option>
+                        <option value="science">Natural / Basic Sciences</option>
+                    </select>
                 </div>
+
+                <!-- Caste Category -->
+                <div class="filter-group">
+                    <label class="filter-label" for="filter-caste">
+                        <span class="filter-label-icon">🏷️</span> Caste Category
+                    </label>
+                    <select id="filter-caste" class="filter-select">
+                        <option value="">— Select Category —</option>
+                        <option value="sc">Scheduled Caste (SC)</option>
+                        <option value="st">Scheduled Tribe (ST)</option>
+                        <option value="obc">OBC</option>
+                        <option value="ebc-dnt">EBC / DNT</option>
+                        <option value="general">General / Open</option>
+                        <option value="any">Any / All</option>
+                    </select>
+                </div>
+
+                <!-- Gender -->
+                <div class="filter-group">
+                    <label class="filter-label" for="filter-gender">
+                        <span class="filter-label-icon">👤</span> Gender
+                    </label>
+                    <select id="filter-gender" class="filter-select">
+                        <option value="">— Any Gender —</option>
+                        <option value="any">Any</option>
+                        <option value="girl">Girl / Woman</option>
+                        <option value="boy">Boy / Man</option>
+                    </select>
+                </div>
+
+                <!-- Course Type -->
+                <div class="filter-group">
+                    <label class="filter-label" for="filter-course">
+                        <span class="filter-label-icon">🎓</span> Course Type
+                    </label>
+                    <select id="filter-course" class="filter-select">
+                        <option value="">— Any Course —</option>
+                        <option value="pre-matric">Pre-Matric</option>
+                        <option value="post-matric">Post-Matric</option>
+                        <option value="professional">Professional (Engg/Medical)</option>
+                        <option value="research">Research (M.Phil./Ph.D.)</option>
+                        <option value="overseas">Overseas / Foreign</option>
+                        <option value="science">Basic Sciences</option>
+                    </select>
+                </div>
+
+                <!-- Marks / Percentile -->
+                <div class="filter-group">
+                    <label class="filter-label" for="filter-percentile">
+                        <span class="filter-label-icon">📊</span> Marks / Percentile
+                    </label>
+                    <select id="filter-percentile" class="filter-select">
+                        <option value="">— Select Marks —</option>
+                        <option value="above80">Above 80th Percentile</option>
+                        <option value="55-80">55% – 80th Percentile</option>
+                        <option value="below55">Below 55%</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="filter-actions">
+                <button class="btn btn-gov filter-btn" id="btn-apply-filter" onclick="applyFilters()">
+                    ✨ Find Matching Scholarships
+                </button>
+                <button class="btn btn-reset" id="btn-reset-filter" onclick="resetFilters()">
+                    ↺ Reset All Filters
+                </button>
+            </div>
+
+            <div class="filter-result-info" id="filter-result-info" style="display:none;">
+                <span id="filter-result-count"></span>
             </div>
         </section>
 
-        <!-- Private Scholarships Section -->
+        <!-- ── GOVERNMENT SCHOLARSHIPS ── -->
+        <section class="scholarships-section slide-up" id="gov-scholarships">
+            <h2 class="section-title">Government Scholarships</h2>
+            <div class="card-grid" id="gov-grid">
+
+                <!-- 1. Central Sector Scheme -->
+                <div class="scholarship-card gov-card"
+                    data-income="below-450000"
+                    data-class="ug pg"
+                    data-category="any"
+                    data-percentile="above80"
+                    id="card-css">
+                    <div class="card-badge badge-gov">Central Govt.</div>
+                    <div class="card-amount">₹12,000–₹20,000 / year</div>
+                    <h3>Central Sector Scheme of Scholarship</h3>
+                    <p>For meritorious students from low-income families pursuing degree or professional courses like Engineering and Medical.</p>
+                    <div class="card-tags">
+                        <span class="tag tag-income">Income ≤ ₹4.5L</span>
+                        <span class="tag tag-merit">80th+ Percentile</span>
+                        <span class="tag tag-class">UG / PG</span>
+                    </div>
+                    <div class="card-details">
+                        <div class="detail-row"><span class="detail-icon">⏳</span><span>Up to 5 years (renewable)</span></div>
+                        <div class="detail-row"><span class="detail-icon">📋</span><span>Maintain 50%+ marks &amp; 75% attendance</span></div>
+                        <div class="detail-row"><span class="detail-icon">🌐</span><span>Apply via National Scholarship Portal</span></div>
+                    </div>
+                    <a class="btn btn-gov" id="btn-gov-css" href="meritbased.html#css" target="_blank">Learn More →</a>
+                </div>
+
+                <!-- 2. NMMSS -->
+                <div class="scholarship-card gov-card"
+                    data-income="below-350000"
+                    data-class="class9-12"
+                    data-category="any"
+                    data-percentile="55-80"
+                    id="card-nmmss">
+                    <div class="card-badge badge-gov">Central Govt.</div>
+                    <div class="card-amount">₹12,000 / year</div>
+                    <h3>National Means-cum-Merit Scholarship (NMMSS)</h3>
+                    <p>Supports meritorious students from economically weaker sections in Government or Government-aided schools, from Class IX to XII.</p>
+                    <div class="card-tags">
+                        <span class="tag tag-income">Income ≤ ₹3.5L</span>
+                        <span class="tag tag-merit">55%+ in Class VII</span>
+                        <span class="tag tag-class">Class IX–XII</span>
+                    </div>
+                    <div class="card-details">
+                        <div class="detail-row"><span class="detail-icon">⏳</span><span>4 years (Class IX to XII)</span></div>
+                        <div class="detail-row"><span class="detail-icon">📋</span><span>State-level MAT + SAT examination</span></div>
+                        <div class="detail-row"><span class="detail-icon">🌐</span><span>Apply via National Scholarship Portal</span></div>
+                    </div>
+                    <a class="btn btn-gov" id="btn-gov-nmmss" href="meritbased.html#nmmss" target="_blank">Learn More →</a>
+                </div>
+
+                <!-- 3. INSPIRE SHE -->
+                <div class="scholarship-card gov-card"
+                    data-income="any"
+                    data-class="science"
+                    data-category="any"
+                    data-percentile="above80"
+                    id="card-inspire">
+                    <div class="card-badge badge-gov">DST / Govt. of India</div>
+                    <div class="card-amount">₹80,000 / year</div>
+                    <h3>INSPIRE Scholarship for Higher Education (SHE)</h3>
+                    <p>Attracts talented students to undertake higher education in natural and basic sciences at UG and PG levels.</p>
+                    <div class="card-tags">
+                        <span class="tag tag-income">No Income Limit</span>
+                        <span class="tag tag-merit">Top 1% / Board Topper</span>
+                        <span class="tag tag-class">Science UG/PG</span>
+                    </div>
+                    <div class="card-details">
+                        <div class="detail-row"><span class="detail-icon">⏳</span><span>5 years (renewable)</span></div>
+                        <div class="detail-row"><span class="detail-icon">📋</span><span>Must be in natural/basic sciences stream</span></div>
+                        <div class="detail-row"><span class="detail-icon">🌐</span><span>Apply via DST INSPIRE portal</span></div>
+                    </div>
+                    <a class="btn btn-gov" id="btn-gov-inspire" href="meritbased.html#inspire" target="_blank">Learn More →</a>
+                </div>
+
+                <!-- 4. CBSE Single Girl Child -->
+                <div class="scholarship-card gov-card"
+                    data-income="any"
+                    data-class="class9-12"
+                    data-category="girl"
+                    data-percentile="55-80"
+                    id="card-cbse">
+                    <div class="card-badge badge-gov">CBSE</div>
+                    <div class="card-amount">₹500 / month</div>
+                    <h3>CBSE Merit Scholarship – Single Girl Child</h3>
+                    <p>Awarded to meritorious single girl children of their parents, studying in CBSE-affiliated schools in Class XI and XII.</p>
+                    <div class="card-tags">
+                        <span class="tag tag-income">CBSE School</span>
+                        <span class="tag tag-merit">Single Girl Child</span>
+                        <span class="tag tag-class">Class XI–XII</span>
+                    </div>
+                    <div class="card-details">
+                        <div class="detail-row"><span class="detail-icon">⏳</span><span>2 years (Class XI &amp; XII)</span></div>
+                        <div class="detail-row"><span class="detail-icon">📋</span><span>Must be enrolled in a CBSE school</span></div>
+                        <div class="detail-row"><span class="detail-icon">🌐</span><span>Apply via CBSE official website</span></div>
+                    </div>
+                    <a class="btn btn-gov" id="btn-gov-cbse" href="meritbased.html#cbse" target="_blank">Learn More →</a>
+                </div>
+
+                <!-- 5. Swami Vivekananda (SVMCM) -->
+                <div class="scholarship-card gov-card"
+                    data-income="below-450000"
+                    data-class="class9-12 ug pg"
+                    data-category="any"
+                    data-percentile="55-80"
+                    id="card-svmcm">
+                    <div class="card-badge badge-state">West Bengal Govt.</div>
+                    <div class="card-amount">₹1,000–₹8,000 / month</div>
+                    <h3>Swami Vivekananda Merit Cum Means Scholarship (SVMCM)</h3>
+                    <p>West Bengal government scholarship for meritorious students from economically weaker families ranging from Class IX to PG level.</p>
+                    <div class="card-tags">
+                        <span class="tag tag-income">Income ≤ ₹2.5L (WB)</span>
+                        <span class="tag tag-merit">60%+ Marks</span>
+                        <span class="tag tag-class">IX–XII, UG, PG</span>
+                    </div>
+                    <div class="card-details">
+                        <div class="detail-row"><span class="detail-icon">⏳</span><span>Annual renewal based on performance</span></div>
+                        <div class="detail-row"><span class="detail-icon">📋</span><span>Residents of West Bengal only</span></div>
+                        <div class="detail-row"><span class="detail-icon">🌐</span><span>Apply via svmcm.wbhed.gov.in</span></div>
+                    </div>
+                    <a class="btn btn-gov" id="btn-gov-svmcm" href="meritbased.html#svmcm" target="_blank">Learn More →</a>
+                </div>
+
+            </div>
+            <!-- No results message -->
+            <div class="no-results" id="no-results-gov" style="display:none;">
+                <span class="no-results-icon">🔍</span>
+                <p>No government scholarships match your current filters.</p>
+                <button class="btn btn-reset" onclick="resetFilters()">Reset Filters</button>
+            </div>
+        </section>
+
+        <!-- ── CASTE-BASED SCHOLARSHIPS ── -->
+        <section class="scholarships-section slide-up delay-1" id="caste-scholarships">
+            <h2 class="section-title section-title-caste">SC / ST / OBC Scholarships</h2>
+            <div class="card-grid" id="caste-grid">
+
+                <!-- 1. Post-Matric SC -->
+                <div class="scholarship-card caste-card sc-card"
+                    data-income="below-250000" data-class="class9-12 ug pg"
+                    data-caste="sc" data-gender="any"
+                    data-course="post-matric" data-percentile="any" id="card-pm-sc">
+                    <div class="card-badge badge-sc">Scheduled Caste</div>
+                    <div class="card-amount caste-amount">Tuition + Maintenance</div>
+                    <h3>Post-Matric Scholarship for SC Students</h3>
+                    <p>Covers tuition and maintenance fees for SC students pursuing studies beyond matriculation (Class XI onwards) in government and private institutions.</p>
+                    <div class="card-tags">
+                        <span class="tag tag-caste-sc">SC</span>
+                        <span class="tag tag-income">Income ≤ ₹2.5L</span>
+                        <span class="tag tag-class">Class XI – PG</span>
+                    </div>
+                    <div class="card-details">
+                        <div class="detail-row"><span class="detail-icon">⏳</span><span>Annual renewal</span></div>
+                        <div class="detail-row"><span class="detail-icon">📋</span><span>Ministry of Social Justice &amp; Empowerment</span></div>
+                        <div class="detail-row"><span class="detail-icon">🌐</span><span>Apply via NSP (scholarships.gov.in)</span></div>
+                    </div>
+                    <a class="btn btn-caste" id="btn-pm-sc" href="https://scholarships.gov.in" target="_blank">Apply on NSP →</a>
+                </div>
+
+                <!-- 2. National Fellowship SC -->
+                <div class="scholarship-card caste-card sc-card"
+                    data-income="any" data-class="phd"
+                    data-caste="sc" data-gender="any"
+                    data-course="research" data-percentile="any" id="card-nfsc">
+                    <div class="card-badge badge-sc">Scheduled Caste</div>
+                    <div class="card-amount caste-amount">JRF + SRF Rates</div>
+                    <h3>National Fellowship for SC Students (NFSC)</h3>
+                    <p>Provides 2,000 fellowships annually to SC students for M.Phil./Ph.D. in universities and research institutions across India.</p>
+                    <div class="card-tags">
+                        <span class="tag tag-caste-sc">SC</span>
+                        <span class="tag tag-class">M.Phil. / Ph.D.</span>
+                        <span class="tag tag-merit">2,000 Slots/yr</span>
+                    </div>
+                    <div class="card-details">
+                        <div class="detail-row"><span class="detail-icon">⏳</span><span>Up to 5 years</span></div>
+                        <div class="detail-row"><span class="detail-icon">📋</span><span>UGC-recognized universities only</span></div>
+                        <div class="detail-row"><span class="detail-icon">🌐</span><span>Apply via UGC / NSP portal</span></div>
+                    </div>
+                    <a class="btn btn-caste" id="btn-nfsc" href="https://scholarships.gov.in" target="_blank">Apply on NSP →</a>
+                </div>
+
+                <!-- 3. Top Class Education SC -->
+                <div class="scholarship-card caste-card sc-card"
+                    data-income="below-450000" data-class="ug pg"
+                    data-caste="sc" data-gender="any"
+                    data-course="professional" data-percentile="above80" id="card-topclass-sc">
+                    <div class="card-badge badge-sc">Scheduled Caste</div>
+                    <div class="card-amount caste-amount">Full Expenses Covered</div>
+                    <h3>Top Class Education for SC Students</h3>
+                    <p>Covers full tuition, accommodation, and other expenses for SC students admitted to premier institutions like IITs, IIMs, NLUs, and AIIMS.</p>
+                    <div class="card-tags">
+                        <span class="tag tag-caste-sc">SC</span>
+                        <span class="tag tag-income">Income ≤ ₹4.5L</span>
+                        <span class="tag tag-merit">Premier Institutes</span>
+                    </div>
+                    <div class="card-details">
+                        <div class="detail-row"><span class="detail-icon">⏳</span><span>Duration of course</span></div>
+                        <div class="detail-row"><span class="detail-icon">📋</span><span>Only for listed premier institutes</span></div>
+                        <div class="detail-row"><span class="detail-icon">🌐</span><span>Apply via NSP</span></div>
+                    </div>
+                    <a class="btn btn-caste" id="btn-topclass-sc" href="https://scholarships.gov.in" target="_blank">Apply on NSP →</a>
+                </div>
+
+                <!-- 4. National Overseas Scholarship SC -->
+                <div class="scholarship-card caste-card sc-card"
+                    data-income="below-450000" data-class="pg phd"
+                    data-caste="sc" data-gender="any"
+                    data-course="overseas" data-percentile="above80" id="card-nos-sc">
+                    <div class="card-badge badge-sc">Scheduled Caste</div>
+                    <div class="card-amount caste-amount">Full Funding Abroad</div>
+                    <h3>National Overseas Scholarship (NOS) for SC</h3>
+                    <p>Financial assistance to SC students for Master's or Ph.D. at universities abroad — covering tuition, living costs, and airfare. 30 slots per year.</p>
+                    <div class="card-tags">
+                        <span class="tag tag-caste-sc">SC</span>
+                        <span class="tag tag-income">Income ≤ ₹8L</span>
+                        <span class="tag tag-class">Master's / Ph.D. Abroad</span>
+                    </div>
+                    <div class="card-details">
+                        <div class="detail-row"><span class="detail-icon">⏳</span><span>Duration of foreign programme</span></div>
+                        <div class="detail-row"><span class="detail-icon">📋</span><span>Age ≤ 35 yrs; 30 slots/yr</span></div>
+                        <div class="detail-row"><span class="detail-icon">🌐</span><span>Apply via nosmsje.gov.in</span></div>
+                    </div>
+                    <a class="btn btn-caste" id="btn-nos-sc" href="https://nosmsje.gov.in" target="_blank">Apply →</a>
+                </div>
+
+                <!-- 5. Post-Matric OBC -->
+                <div class="scholarship-card caste-card obc-card"
+                    data-income="below-150000" data-class="class9-12 ug pg"
+                    data-caste="obc" data-gender="any"
+                    data-course="post-matric" data-percentile="any" id="card-pm-obc">
+                    <div class="card-badge badge-obc">OBC</div>
+                    <div class="card-amount caste-amount">Tuition + Maintenance</div>
+                    <h3>Post-Matric Scholarship for OBC Students</h3>
+                    <p>Aids OBC students continuing education from Class XI onwards. Covers tuition fees and maintenance allowance in government and recognized institutions.</p>
+                    <div class="card-tags">
+                        <span class="tag tag-caste-obc">OBC</span>
+                        <span class="tag tag-income">Income ≤ ₹1.5L</span>
+                        <span class="tag tag-class">Class XI – PG</span>
+                    </div>
+                    <div class="card-details">
+                        <div class="detail-row"><span class="detail-icon">⏳</span><span>Annual renewal</span></div>
+                        <div class="detail-row"><span class="detail-icon">📋</span><span>State-wise income limits may vary</span></div>
+                        <div class="detail-row"><span class="detail-icon">🌐</span><span>Apply via NSP</span></div>
+                    </div>
+                    <a class="btn btn-caste-obc" id="btn-pm-obc" href="https://scholarships.gov.in" target="_blank">Apply on NSP →</a>
+                </div>
+
+                <!-- 6. National Fellowship OBC -->
+                <div class="scholarship-card caste-card obc-card"
+                    data-income="any" data-class="phd"
+                    data-caste="obc" data-gender="any"
+                    data-course="research" data-percentile="any" id="card-nfobc">
+                    <div class="card-badge badge-obc">OBC</div>
+                    <div class="card-amount caste-amount">JRF / SRF Rates</div>
+                    <h3>National Fellowship for OBC Students (NFOBC)</h3>
+                    <p>Provides financial assistance to OBC students pursuing M.Phil. and Ph.D. in universities and research institutions recognized by UGC.</p>
+                    <div class="card-tags">
+                        <span class="tag tag-caste-obc">OBC</span>
+                        <span class="tag tag-class">M.Phil. / Ph.D.</span>
+                        <span class="tag tag-merit">Research Only</span>
+                    </div>
+                    <div class="card-details">
+                        <div class="detail-row"><span class="detail-icon">⏳</span><span>Up to 5 years</span></div>
+                        <div class="detail-row"><span class="detail-icon">📋</span><span>UGC affiliated institutions only</span></div>
+                        <div class="detail-row"><span class="detail-icon">🌐</span><span>Apply via UGC / NSP</span></div>
+                    </div>
+                    <a class="btn btn-caste-obc" id="btn-nfobc" href="https://scholarships.gov.in" target="_blank">Apply on NSP →</a>
+                </div>
+
+                <!-- 7. Dr. Ambedkar Interest Subsidy -->
+                <div class="scholarship-card caste-card obc-card"
+                    data-income="below-450000" data-class="pg phd"
+                    data-caste="obc ebc-dnt" data-gender="any"
+                    data-course="overseas" data-percentile="any" id="card-ambedkar-subsidy">
+                    <div class="card-badge badge-obc">OBC / EBC</div>
+                    <div class="card-amount caste-amount">Interest Subsidy</div>
+                    <h3>Dr. Ambedkar Scheme – Interest Subsidy (Overseas)</h3>
+                    <p>Full interest subsidy on educational loans taken for overseas Master's/Ph.D. studies by OBC and EBC students during the moratorium period.</p>
+                    <div class="card-tags">
+                        <span class="tag tag-caste-obc">OBC / EBC</span>
+                        <span class="tag tag-income">Income ≤ ₹8L</span>
+                        <span class="tag tag-class">Overseas PG / Ph.D.</span>
+                    </div>
+                    <div class="card-details">
+                        <div class="detail-row"><span class="detail-icon">⏳</span><span>Moratorium + 1 yr after course</span></div>
+                        <div class="detail-row"><span class="detail-icon">📋</span><span>Loan from a scheduled bank required</span></div>
+                        <div class="detail-row"><span class="detail-icon">🌐</span><span>Apply via NSP / Ministry SJE</span></div>
+                    </div>
+                    <a class="btn btn-caste-obc" id="btn-ambedkar-subsidy" href="https://scholarships.gov.in" target="_blank">Apply on NSP →</a>
+                </div>
+
+                <!-- 8. Pre & Post-Matric ST -->
+                <div class="scholarship-card caste-card st-card"
+                    data-income="below-250000" data-class="pre-matric class9-12 ug"
+                    data-caste="st" data-gender="any"
+                    data-course="pre-matric post-matric" data-percentile="any" id="card-st-matric">
+                    <div class="card-badge badge-st">Scheduled Tribe</div>
+                    <div class="card-amount caste-amount">₹150 – ₹1,200 / month</div>
+                    <h3>Pre &amp; Post-Matric Scholarships for ST Students</h3>
+                    <p>Managed by the Ministry of Tribal Affairs — supports ST students from Class I through graduation with maintenance allowance and tuition fees.</p>
+                    <div class="card-tags">
+                        <span class="tag tag-caste-st">ST</span>
+                        <span class="tag tag-income">Income ≤ ₹2.5L</span>
+                        <span class="tag tag-class">Class I – UG</span>
+                    </div>
+                    <div class="card-details">
+                        <div class="detail-row"><span class="detail-icon">⏳</span><span>Annual renewal</span></div>
+                        <div class="detail-row"><span class="detail-icon">📋</span><span>Ministry of Tribal Affairs scheme</span></div>
+                        <div class="detail-row"><span class="detail-icon">🌐</span><span>Apply via NSP / state tribal portals</span></div>
+                    </div>
+                    <a class="btn btn-caste-st" id="btn-st-matric" href="https://scholarships.gov.in" target="_blank">Apply on NSP →</a>
+                </div>
+
+                <!-- 9. National Fellowship ST -->
+                <div class="scholarship-card caste-card st-card"
+                    data-income="any" data-class="phd"
+                    data-caste="st" data-gender="any"
+                    data-course="research" data-percentile="any" id="card-nfst">
+                    <div class="card-badge badge-st">Scheduled Tribe</div>
+                    <div class="card-amount caste-amount">JRF / SRF Rates</div>
+                    <h3>National Fellowship for Higher Education of ST Students</h3>
+                    <p>665 fellowships per year for ST students pursuing M.Phil./Ph.D. — plus separate scholarships for UG/PG at premier institutions under the Ministry of Tribal Affairs.</p>
+                    <div class="card-tags">
+                        <span class="tag tag-caste-st">ST</span>
+                        <span class="tag tag-class">M.Phil. / Ph.D.</span>
+                        <span class="tag tag-merit">665 Slots/yr</span>
+                    </div>
+                    <div class="card-details">
+                        <div class="detail-row"><span class="detail-icon">⏳</span><span>Up to 5 years</span></div>
+                        <div class="detail-row"><span class="detail-icon">📋</span><span>UGC-recognized institutes</span></div>
+                        <div class="detail-row"><span class="detail-icon">🌐</span><span>Apply via NSP / UGC</span></div>
+                    </div>
+                    <a class="btn btn-caste-st" id="btn-nfst" href="https://scholarships.gov.in" target="_blank">Apply on NSP →</a>
+                </div>
+
+                <!-- 10. Savitribai Phule Maharashtra -->
+                <div class="scholarship-card caste-card sc-card"
+                    data-income="below-250000" data-class="pre-matric class9-12"
+                    data-caste="sc" data-gender="girl"
+                    data-course="pre-matric" data-percentile="any" id="card-savitribai">
+                    <div class="card-badge badge-state">Maharashtra Govt.</div>
+                    <div class="card-amount caste-amount">₹60 – ₹100 / month</div>
+                    <h3>Savitribai Phule Pre-Matric Scholarship (Girls, SC)</h3>
+                    <p>Maharashtra scholarship for SC/Neo-Buddhist girl students studying from Class I to X — encourages girl education and reduces dropout rates.</p>
+                    <div class="card-tags">
+                        <span class="tag tag-caste-sc">SC / Neo-Buddhist</span>
+                        <span class="tag tag-income">Income ≤ ₹2L</span>
+                        <span class="tag tag-class">Class I – X</span>
+                    </div>
+                    <div class="card-details">
+                        <div class="detail-row"><span class="detail-icon">⏳</span><span>Annual renewal</span></div>
+                        <div class="detail-row"><span class="detail-icon">📋</span><span>Maharashtra residents; Girls only</span></div>
+                        <div class="detail-row"><span class="detail-icon">🌐</span><span>Apply via mahadbt.maharashtra.gov.in</span></div>
+                    </div>
+                    <a class="btn btn-caste" id="btn-savitribai" href="https://mahadbt.maharashtra.gov.in" target="_blank">Apply →</a>
+                </div>
+
+                <!-- 11. Haryana Dr. Ambedkar Medhavi -->
+                <div class="scholarship-card caste-card sc-card"
+                    data-income="below-450000" data-class="class9-12 ug pg"
+                    data-caste="sc" data-gender="any"
+                    data-course="post-matric" data-percentile="above80" id="card-haryana-ambedkar">
+                    <div class="card-badge badge-state">Haryana Govt.</div>
+                    <div class="card-amount caste-amount">₹8,000 – ₹12,000 / yr</div>
+                    <h3>Dr. Ambedkar Medhavi Chhattar Sansodhit Yojana</h3>
+                    <p>Haryana's merit-cum-means scholarship for SC/BC students who secured top marks in board or university examinations, supporting them through higher education.</p>
+                    <div class="card-tags">
+                        <span class="tag tag-caste-sc">SC / BC</span>
+                        <span class="tag tag-income">Income ≤ ₹4L</span>
+                        <span class="tag tag-merit">Top Scorer</span>
+                    </div>
+                    <div class="card-details">
+                        <div class="detail-row"><span class="detail-icon">⏳</span><span>Annual</span></div>
+                        <div class="detail-row"><span class="detail-icon">📋</span><span>Haryana domicile required</span></div>
+                        <div class="detail-row"><span class="detail-icon">🌐</span><span>Apply via haryanascbc.gov.in</span></div>
+                    </div>
+                    <a class="btn btn-caste" id="btn-haryana-ambedkar" href="https://haryanascbc.gov.in" target="_blank">Apply →</a>
+                </div>
+
+                <!-- 12. Telangana Ambedkar Overseas -->
+                <div class="scholarship-card caste-card sc-card"
+                    data-income="below-450000" data-class="pg phd"
+                    data-caste="sc st obc" data-gender="any"
+                    data-course="overseas" data-percentile="above80" id="card-telangana-overseas">
+                    <div class="card-badge badge-state">Telangana Govt.</div>
+                    <div class="card-amount caste-amount">Up to ₹20 Lakh</div>
+                    <h3>Ambedkar Overseas Vidya Nidhi (Telangana)</h3>
+                    <p>Telangana state scheme for SC, ST, BC, and minority students pursuing Master's and Ph.D. programmes at universities abroad — covers tuition + living expenses.</p>
+                    <div class="card-tags">
+                        <span class="tag tag-caste-sc">SC / ST / OBC</span>
+                        <span class="tag tag-income">Income ≤ ₹5L</span>
+                        <span class="tag tag-class">Overseas PG / Ph.D.</span>
+                    </div>
+                    <div class="card-details">
+                        <div class="detail-row"><span class="detail-icon">⏳</span><span>Duration of foreign course</span></div>
+                        <div class="detail-row"><span class="detail-icon">📋</span><span>Telangana domicile required</span></div>
+                        <div class="detail-row"><span class="detail-icon">🌐</span><span>Apply via telanganaepass.cgg.gov.in</span></div>
+                    </div>
+                    <a class="btn btn-caste" id="btn-telangana-overseas" href="https://telanganaepass.cgg.gov.in" target="_blank">Apply →</a>
+                </div>
+
+            </div>
+            <div class="no-results" id="no-results-caste" style="display:none;">
+                <span class="no-results-icon">🔍</span>
+                <p>No caste-based scholarships match your current filters.</p>
+                <button class="btn btn-reset" onclick="resetFilters()">Reset Filters</button>
+            </div>
+        </section>
+
+        <!-- ── PRIVATE SCHOLARSHIPS ── -->
         <section class="scholarships-section slide-up delay-1" id="private-scholarships">
-            <h2 class="section-title">Private Scholarships</h2>
+            <h2 class="section-title">Private &amp; Corporate Scholarships</h2>
             <div class="card-grid" id="private-grid">
-                <!-- Example Card for User to Duplicate -->
-                <div class="scholarship-card private-card">
-                    <h3>Title of Private Scholarship</h3>
-                    <p>Details about the scholarship criteria, deadlines, and benefits will be added here...</p>
-                    <button class="btn btn-private" id="btn-private-1">Learn More</button>
+
+
+                <div class="scholarship-card private-card"
+                    data-income="any"
+                    data-class="ug pg"
+                    data-category="any"
+                    data-percentile="any"
+                    id="card-tata">
+                    <div class="card-badge badge-private">Tata Trust</div>
+                    <div class="card-amount">Up to ₹50,000 / year</div>
+                    <h3>Tata Trust Scholarship</h3>
+                    <p>Supports underprivileged students from diverse backgrounds to pursue undergraduate and professional courses at top Indian institutions.</p>
+                    <div class="card-tags">
+                        <span class="tag tag-private">Private</span>
+                        <span class="tag tag-class">UG / PG</span>
+                        <span class="tag tag-income">Need-Based</span>
+                    </div>
+                    <div class="card-details">
+                        <div class="detail-row"><span class="detail-icon">⏳</span><span>Duration of the course</span></div>
+                        <div class="detail-row"><span class="detail-icon">📋</span><span>Verified financial need required</span></div>
+                        <div class="detail-row"><span class="detail-icon">🌐</span><span>Apply via Buddy4Study</span></div>
+                    </div>
+                    <a class="btn btn-private" id="btn-private-tata" href="https://www.buddy4study.com/scholarship/tata-scholarships" target="_blank">Learn More →</a>
                 </div>
-                <!-- Example Card for User to Duplicate -->
-                <div class="scholarship-card private-card">
-                    <h3>Corporate Sponsorship</h3>
-                    <p>Details about the scholarship criteria, deadlines, and benefits will be added here...</p>
-                    <button class="btn btn-private" id="btn-private-2">Learn More</button>
+
+                <div class="scholarship-card private-card"
+                    data-income="any"
+                    data-class="ug"
+                    data-category="any"
+                    data-percentile="above80"
+                    id="card-reliance">
+                    <div class="card-badge badge-private">Reliance Foundation</div>
+                    <div class="card-amount">Up to ₹4,00,000 / year</div>
+                    <h3>Reliance Foundation Undergraduate Scholarship</h3>
+                    <p>Targets bright students from economically challenged backgrounds pursuing UG degrees in STEM or Humanities at top colleges.</p>
+                    <div class="card-tags">
+                        <span class="tag tag-private">Private</span>
+                        <span class="tag tag-class">UG</span>
+                        <span class="tag tag-merit">Merit + Need</span>
+                    </div>
+                    <div class="card-details">
+                        <div class="detail-row"><span class="detail-icon">⏳</span><span>1 year (renewable)</span></div>
+                        <div class="detail-row"><span class="detail-icon">📋</span><span>Top institutions in India only</span></div>
+                        <div class="detail-row"><span class="detail-icon">🌐</span><span>Apply via reliancefoundation.org</span></div>
+                    </div>
+                    <a class="btn btn-private" id="btn-private-reliance" href="https://scholarships.reliancefoundation.org/" target="_blank">Learn More →</a>
                 </div>
+
             </div>
         </section>
     </main>
 
+    <footer class="site-footer" id="main-footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <span class="logo">ScholarLink</span>
+                <p>Empowering students to find the right financial aid — faster.</p>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="scholarships.html">Scholarships</a>
+                <a href="auth.html">Login / Sign Up</a>
+            </div>
+            <p class="footer-note">© 2026 ScholarLink. Data sourced from NSP, CBSE, DST &amp; official government portals.</p>
+        </div>
+    </footer>
+
     <script src="script.js"></script>
+    <script>
+        // ── INCOME BRACKET CEILING MAP ──
+        // Maps each selector value → the max income the USER earns in that bracket
+        const incomeCeilMap = {
+            'below-150000':  150000,
+            '150000-250000': 250000,
+            '250000-350000': 350000,
+            '350000-450000': 450000,
+            'above-450000':  Infinity
+        };
+        // Maps each card's data-income value → max income the card allows
+        const cardIncomeAllowMap = {
+            'below-150000':  150000,
+            'below-250000':  250000,
+            'below-350000':  350000,
+            'below-450000':  450000,
+            'any':           Infinity
+        };
+
+        function applyFilters() {
+            const income     = document.getElementById('filter-income').value;
+            const level      = document.getElementById('filter-class').value;
+            const caste      = document.getElementById('filter-caste').value;
+            const gender     = document.getElementById('filter-gender').value;
+            const course     = document.getElementById('filter-course').value;
+            const percentile = document.getElementById('filter-percentile').value;
+
+            const cards = document.querySelectorAll('.scholarship-card');
+            let visibleCount = 0;
+
+            cards.forEach(card => {
+                let match = true;
+                const d = card.dataset;
+
+                // ── INCOME ──
+                if (income && match) {
+                    const userMax  = incomeCeilMap[income] ?? Infinity;
+                    const cardMax  = cardIncomeAllowMap[d.income] ?? Infinity;
+                    // Card with 'any' income always passes.
+                    // Otherwise: user's income must be ≤ card's allowed max.
+                    if (d.income !== 'any' && userMax > cardMax) match = false;
+                }
+
+                // ── STUDY LEVEL ──
+                if (level && match) {
+                    const cardClass = d.class || '';
+                    if (cardClass !== 'any' && !cardClass.includes(level)) match = false;
+                }
+
+                // ── CASTE ──
+                if (caste && caste !== 'any' && match) {
+                    const cardCaste = d.caste || 'any';
+                    // card's data-caste may be space-separated (e.g. "sc st obc")
+                    if (cardCaste !== 'any' && !cardCaste.includes(caste)) match = false;
+                }
+
+                // ── GENDER ──
+                if (gender && gender !== 'any' && match) {
+                    const cardGender = d.gender || 'any';
+                    if (cardGender !== 'any' && cardGender !== gender) match = false;
+                }
+
+                // ── COURSE TYPE ──
+                if (course && match) {
+                    const cardCourse = d.course || 'any';
+                    if (cardCourse !== 'any' && !cardCourse.includes(course)) match = false;
+                }
+
+                // ── PERCENTILE / MARKS ──
+                if (percentile && match) {
+                    const cardPerc = d.percentile || 'any';
+                    if (cardPerc !== 'any') {
+                        // If user has above80, they meet any requirement
+                        if (percentile === '55-80' && cardPerc === 'above80') match = false;
+                        if (percentile === 'below55' && cardPerc !== 'below55') match = false;
+                    }
+                }
+
+                card.style.display = match ? '' : 'none';
+                card.classList.toggle('card-filtered-in', match);
+                if (match) visibleCount++;
+            });
+
+            // Result count
+            const info = document.getElementById('filter-result-info');
+            document.getElementById('filter-result-count').textContent =
+                `✅ ${visibleCount} scholarship${visibleCount !== 1 ? 's' : ''} match your profile`;
+            info.style.display = 'flex';
+
+            // Per-section no-results messages
+            [
+                { grid: 'gov-grid',    msg: 'no-results-gov'   },
+                { grid: 'caste-grid',  msg: 'no-results-caste' },
+            ].forEach(({ grid, msg }) => {
+                const visible = [...document.querySelectorAll(`#${grid} .scholarship-card`)]
+                    .some(c => c.style.display !== 'none');
+                document.getElementById(msg).style.display = visible ? 'none' : 'flex';
+            });
+        }
+
+        function resetFilters() {
+            ['filter-income','filter-class','filter-caste',
+             'filter-gender','filter-course','filter-percentile'].forEach(id => {
+                document.getElementById(id).value = '';
+            });
+            document.querySelectorAll('.scholarship-card').forEach(card => {
+                card.style.display = '';
+                card.classList.remove('card-filtered-in');
+            });
+            document.getElementById('filter-result-info').style.display = 'none';
+            ['no-results-gov','no-results-caste'].forEach(id => {
+                document.getElementById(id).style.display = 'none';
+            });
+        }
+    </script>
 </body>
 
 </html>
