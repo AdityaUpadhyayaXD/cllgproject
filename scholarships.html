@@ -150,26 +150,27 @@
             <h2 class="section-title">Government Scholarships</h2>
             <div class="card-grid" id="gov-grid">
 
-                <!-- 1. Central Sector Scheme -->
+                <!-- 1. Central Sector Scheme (CSSS) -->
                 <div class="scholarship-card gov-card"
                     data-income="below-450000"
                     data-class="ug pg"
-                    data-category="any"
+                    data-caste="any" data-gender="any"
+                    data-course="post-matric professional"
                     data-percentile="above80"
                     id="card-css">
                     <div class="card-badge badge-gov">Central Govt.</div>
-                    <div class="card-amount">₹12,000–₹20,000 / year</div>
-                    <h3>Central Sector Scheme of Scholarship</h3>
-                    <p>For meritorious students from low-income families pursuing degree or professional courses like Engineering and Medical.</p>
+                    <div class="card-amount">₹10,000–₹20,000 / year</div>
+                    <h3>Central Sector Scheme of Scholarship (CSSS)</h3>
+                    <p>For meritorious students above 80th percentile in Class XII, pursuing degree or professional courses like B.Tech, MBBS, B.Sc., etc. Income limit up to ₹8 LPA.</p>
                     <div class="card-tags">
-                        <span class="tag tag-income">Income ≤ ₹4.5L</span>
+                        <span class="tag tag-income">Income ≤ ₹8L</span>
                         <span class="tag tag-merit">80th+ Percentile</span>
                         <span class="tag tag-class">UG / PG</span>
                     </div>
                     <div class="card-details">
                         <div class="detail-row"><span class="detail-icon">⏳</span><span>Up to 5 years (renewable)</span></div>
                         <div class="detail-row"><span class="detail-icon">📋</span><span>Maintain 50%+ marks &amp; 75% attendance</span></div>
-                        <div class="detail-row"><span class="detail-icon">🌐</span><span>Apply via National Scholarship Portal</span></div>
+                        <div class="detail-row"><span class="detail-icon">🌐</span><span>Apply via NSP (Jun–Sep)</span></div>
                     </div>
                     <a class="btn btn-gov" id="btn-gov-css" href="meritbased.html#css" target="_blank">Learn More →</a>
                 </div>
@@ -178,7 +179,8 @@
                 <div class="scholarship-card gov-card"
                     data-income="below-350000"
                     data-class="class9-12"
-                    data-category="any"
+                    data-caste="any" data-gender="any"
+                    data-course="post-matric"
                     data-percentile="55-80"
                     id="card-nmmss">
                     <div class="card-badge badge-gov">Central Govt.</div>
@@ -202,7 +204,8 @@
                 <div class="scholarship-card gov-card"
                     data-income="any"
                     data-class="science"
-                    data-category="any"
+                    data-caste="any" data-gender="any"
+                    data-course="science"
                     data-percentile="above80"
                     id="card-inspire">
                     <div class="card-badge badge-gov">DST / Govt. of India</div>
@@ -226,7 +229,8 @@
                 <div class="scholarship-card gov-card"
                     data-income="any"
                     data-class="class9-12"
-                    data-category="girl"
+                    data-caste="any" data-gender="girl"
+                    data-course="post-matric"
                     data-percentile="55-80"
                     id="card-cbse">
                     <div class="card-badge badge-gov">CBSE</div>
@@ -250,7 +254,8 @@
                 <div class="scholarship-card gov-card"
                     data-income="below-450000"
                     data-class="class9-12 ug pg"
-                    data-category="any"
+                    data-caste="any" data-gender="any"
+                    data-course="post-matric professional"
                     data-percentile="55-80"
                     id="card-svmcm">
                     <div class="card-badge badge-state">West Bengal Govt.</div>
@@ -268,6 +273,75 @@
                         <div class="detail-row"><span class="detail-icon">🌐</span><span>Apply via svmcm.wbhed.gov.in</span></div>
                     </div>
                     <a class="btn btn-gov" id="btn-gov-svmcm" href="meritbased.html#svmcm" target="_blank">Learn More →</a>
+                </div>
+
+                <!-- 6. AICTE Pragati (Girls in Engineering) -->
+                <div class="scholarship-card gov-card"
+                    data-income="below-450000" data-class="ug"
+                    data-caste="any" data-gender="girl"
+                    data-course="professional" data-percentile="any"
+                    id="card-pragati">
+                    <div class="card-badge badge-gov">AICTE</div>
+                    <div class="card-amount">₹50,000 / year</div>
+                    <h3>AICTE Pragati Scholarship (Girls)</h3>
+                    <p>For girl students admitted to degree or diploma programmes in AICTE-approved institutions. Max 2 girls per family. Covers tuition fee + incidentals.</p>
+                    <div class="card-tags">
+                        <span class="tag tag-income">Income ≤ ₹8L</span>
+                        <span class="tag tag-merit">Girls Only</span>
+                        <span class="tag tag-class">B.Tech / Diploma</span>
+                    </div>
+                    <div class="card-details">
+                        <div class="detail-row"><span class="detail-icon">⏳</span><span>Duration of course (renewable)</span></div>
+                        <div class="detail-row"><span class="detail-icon">📋</span><span>AICTE-approved institution required</span></div>
+                        <div class="detail-row"><span class="detail-icon">🌐</span><span>Apply via NSP (Jun–Sep)</span></div>
+                    </div>
+                    <a class="btn btn-gov" id="btn-gov-pragati" href="https://scholarships.gov.in" target="_blank">Apply on NSP →</a>
+                </div>
+
+                <!-- 7. AICTE Saksham (Differently-Abled) -->
+                <div class="scholarship-card gov-card"
+                    data-income="below-450000" data-class="ug"
+                    data-caste="any" data-gender="any"
+                    data-course="professional" data-percentile="any"
+                    id="card-saksham">
+                    <div class="card-badge badge-gov">AICTE</div>
+                    <div class="card-amount">₹50,000 / year</div>
+                    <h3>AICTE Saksham Scholarship (PwD)</h3>
+                    <p>For differently-abled students (40%+ disability) pursuing degree or diploma programmes in AICTE-approved technical institutions across India.</p>
+                    <div class="card-tags">
+                        <span class="tag tag-income">Income ≤ ₹8L</span>
+                        <span class="tag tag-merit">40%+ Disability</span>
+                        <span class="tag tag-class">B.Tech / Diploma</span>
+                    </div>
+                    <div class="card-details">
+                        <div class="detail-row"><span class="detail-icon">⏳</span><span>Duration of course</span></div>
+                        <div class="detail-row"><span class="detail-icon">📋</span><span>Disability certificate required</span></div>
+                        <div class="detail-row"><span class="detail-icon">🌐</span><span>Apply via NSP</span></div>
+                    </div>
+                    <a class="btn btn-gov" id="btn-gov-saksham" href="https://scholarships.gov.in" target="_blank">Apply on NSP →</a>
+                </div>
+
+                <!-- 8. Merit-cum-Means for Minorities (MOMA) -->
+                <div class="scholarship-card gov-card"
+                    data-income="below-250000" data-class="ug pg"
+                    data-caste="any" data-gender="any"
+                    data-course="post-matric professional" data-percentile="55-80"
+                    id="card-moma">
+                    <div class="card-badge badge-gov">Min. of Minority Affairs</div>
+                    <div class="card-amount">Up to ₹20,000 + Maintenance</div>
+                    <h3>Merit-cum-Means Scholarship for Minorities</h3>
+                    <p>For students from notified minority communities (Muslim, Christian, Sikh, Buddhist, Jain, Parsi) pursuing professional and technical courses like Engineering and Medical.</p>
+                    <div class="card-tags">
+                        <span class="tag tag-income">Income ≤ ₹2.5L</span>
+                        <span class="tag tag-merit">50%+ in last exam</span>
+                        <span class="tag tag-class">UG / PG Professional</span>
+                    </div>
+                    <div class="card-details">
+                        <div class="detail-row"><span class="detail-icon">⏳</span><span>Duration of course</span></div>
+                        <div class="detail-row"><span class="detail-icon">📋</span><span>Minority community certificate needed</span></div>
+                        <div class="detail-row"><span class="detail-icon">🌐</span><span>Apply via NSP</span></div>
+                    </div>
+                    <a class="btn btn-gov" id="btn-gov-moma" href="https://scholarships.gov.in" target="_blank">Apply on NSP →</a>
                 </div>
 
             </div>
@@ -565,7 +639,8 @@
                 <div class="scholarship-card private-card"
                     data-income="any"
                     data-class="ug pg"
-                    data-category="any"
+                    data-caste="any" data-gender="any"
+                    data-course="professional post-matric"
                     data-percentile="any"
                     id="card-tata">
                     <div class="card-badge badge-private">Tata Trust</div>
@@ -588,11 +663,12 @@
                 <div class="scholarship-card private-card"
                     data-income="any"
                     data-class="ug"
-                    data-category="any"
+                    data-caste="any" data-gender="any"
+                    data-course="professional"
                     data-percentile="above80"
                     id="card-reliance">
                     <div class="card-badge badge-private">Reliance Foundation</div>
-                    <div class="card-amount">Up to ₹4,00,000 / year</div>
+                    <div class="card-amount">Up to ₹2,00,000 / year</div>
                     <h3>Reliance Foundation Undergraduate Scholarship</h3>
                     <p>Targets bright students from economically challenged backgrounds pursuing UG degrees in STEM or Humanities at top colleges.</p>
                     <div class="card-tags">
@@ -606,6 +682,144 @@
                         <div class="detail-row"><span class="detail-icon">🌐</span><span>Apply via reliancefoundation.org</span></div>
                     </div>
                     <a class="btn btn-private" id="btn-private-reliance" href="https://scholarships.reliancefoundation.org/" target="_blank">Learn More →</a>
+                </div>
+
+                <!-- Infosys STEM Stars -->
+                <div class="scholarship-card private-card"
+                    data-income="any" data-class="ug"
+                    data-caste="any" data-gender="girl"
+                    data-course="professional science" data-percentile="above80"
+                    id="card-infosys">
+                    <div class="card-badge badge-private">Infosys Foundation</div>
+                    <div class="card-amount">₹1,00,000 / year</div>
+                    <h3>Infosys STEM Stars Scholarship</h3>
+                    <p>For meritorious girl students pursuing undergraduate STEM degrees. Focuses on building a diverse talent pipeline in science and engineering fields.</p>
+                    <div class="card-tags">
+                        <span class="tag tag-private">Private</span>
+                        <span class="tag tag-merit">Girls in STEM</span>
+                        <span class="tag tag-class">UG (Engg/Science)</span>
+                    </div>
+                    <div class="card-details">
+                        <div class="detail-row"><span class="detail-icon">⏳</span><span>Duration of course</span></div>
+                        <div class="detail-row"><span class="detail-icon">📋</span><span>Top-tier institution preferred</span></div>
+                        <div class="detail-row"><span class="detail-icon">🌐</span><span>Apply via Infosys Foundation portal</span></div>
+                    </div>
+                    <a class="btn btn-private" id="btn-private-infosys" href="https://www.infosys.com/infosys-foundation.html" target="_blank">Learn More →</a>
+                </div>
+
+                <!-- Persistent Kiran -->
+                <div class="scholarship-card private-card"
+                    data-income="any" data-class="ug"
+                    data-caste="any" data-gender="girl"
+                    data-course="professional" data-percentile="55-80"
+                    id="card-persistent">
+                    <div class="card-badge badge-private">Persistent Systems</div>
+                    <div class="card-amount">₹40,000 / year + Mentorship</div>
+                    <h3>Persistent "Kiran" Scholarship (CS/IT Girls)</h3>
+                    <p>Exclusively for girl students in Computer Science or IT branches. Includes annual financial aid plus mentorship from Persistent engineers.</p>
+                    <div class="card-tags">
+                        <span class="tag tag-private">Private</span>
+                        <span class="tag tag-merit">CS/IT Girls Only</span>
+                        <span class="tag tag-class">B.Tech CS/IT</span>
+                    </div>
+                    <div class="card-details">
+                        <div class="detail-row"><span class="detail-icon">⏳</span><span>4 years (B.Tech duration)</span></div>
+                        <div class="detail-row"><span class="detail-icon">📋</span><span>Must be in CS/IT branch</span></div>
+                        <div class="detail-row"><span class="detail-icon">🌐</span><span>Apply via persistent.com/kiran</span></div>
+                    </div>
+                    <a class="btn btn-private" id="btn-private-persistent" href="https://www.persistent.com/" target="_blank">Learn More →</a>
+                </div>
+
+                <!-- HDFC Badhte Kadam -->
+                <div class="scholarship-card private-card"
+                    data-income="below-250000" data-class="ug"
+                    data-caste="any" data-gender="any"
+                    data-course="professional post-matric" data-percentile="55-80"
+                    id="card-hdfc">
+                    <div class="card-badge badge-private">HDFC Bank</div>
+                    <div class="card-amount">Up to ₹1,00,000 / year</div>
+                    <h3>HDFC Badhte Kadam Scholarship</h3>
+                    <p>Need-based scholarship supporting UG students from economically weaker backgrounds pursuing professional and degree courses at recognized institutions.</p>
+                    <div class="card-tags">
+                        <span class="tag tag-private">Private</span>
+                        <span class="tag tag-income">Need-Based</span>
+                        <span class="tag tag-class">UG Professional</span>
+                    </div>
+                    <div class="card-details">
+                        <div class="detail-row"><span class="detail-icon">⏳</span><span>1 year (renewable)</span></div>
+                        <div class="detail-row"><span class="detail-icon">📋</span><span>Financial need verification</span></div>
+                        <div class="detail-row"><span class="detail-icon">🌐</span><span>Apply via Buddy4Study</span></div>
+                    </div>
+                    <a class="btn btn-private" id="btn-private-hdfc" href="https://www.buddy4study.com/" target="_blank">Learn More →</a>
+                </div>
+
+                <!-- Lila Poonawalla -->
+                <div class="scholarship-card private-card"
+                    data-income="below-250000" data-class="ug"
+                    data-caste="any" data-gender="girl"
+                    data-course="professional" data-percentile="55-80"
+                    id="card-poonawalla">
+                    <div class="card-badge badge-private">LPF Foundation</div>
+                    <div class="card-amount">Up to ₹1,00,000 / year</div>
+                    <h3>Lila Poonawalla Foundation Scholarship</h3>
+                    <p>Supports meritorious girl students pursuing engineering in Pune, Mumbai, and Nagpur. Covers tuition, hostel, and study material expenses.</p>
+                    <div class="card-tags">
+                        <span class="tag tag-private">Private</span>
+                        <span class="tag tag-merit">Engg Girls — MH</span>
+                        <span class="tag tag-class">B.Tech / B.E.</span>
+                    </div>
+                    <div class="card-details">
+                        <div class="detail-row"><span class="detail-icon">⏳</span><span>4 years (full course)</span></div>
+                        <div class="detail-row"><span class="detail-icon">📋</span><span>Maharashtra domicile; Girls only</span></div>
+                        <div class="detail-row"><span class="detail-icon">🌐</span><span>Apply via lilapoonawallafoundation.com</span></div>
+                    </div>
+                    <a class="btn btn-private" id="btn-private-poonawalla" href="https://www.lilapoonawallafoundation.com/" target="_blank">Learn More →</a>
+                </div>
+
+                <!-- Google Generation Scholarship -->
+                <div class="scholarship-card private-card cs-card"
+                    data-income="any" data-class="ug pg"
+                    data-caste="any" data-gender="any"
+                    data-course="professional" data-percentile="above80"
+                    id="card-google">
+                    <div class="card-badge badge-cs">Google</div>
+                    <div class="card-amount">~$2,500 USD (₹2L+)</div>
+                    <h3>Google Generation Scholarship (APAC)</h3>
+                    <p>For students excelling in Computer Science who demonstrate leadership and a passion for diversity in tech. Open to UG and PG CS students across Asia-Pacific.</p>
+                    <div class="card-tags">
+                        <span class="tag tag-cs">CS / IT</span>
+                        <span class="tag tag-merit">Diversity + Merit</span>
+                        <span class="tag tag-class">UG / PG</span>
+                    </div>
+                    <div class="card-details">
+                        <div class="detail-row"><span class="detail-icon">⏳</span><span>One-time award</span></div>
+                        <div class="detail-row"><span class="detail-icon">📋</span><span>Must be enrolled in CS/related degree</span></div>
+                        <div class="detail-row"><span class="detail-icon">🌐</span><span>Apply via buildyourfuture.withgoogle.com</span></div>
+                    </div>
+                    <a class="btn btn-cs" id="btn-private-google" href="https://buildyourfuture.withgoogle.com/scholarships" target="_blank">Apply →</a>
+                </div>
+
+                <!-- Adobe Women in Tech -->
+                <div class="scholarship-card private-card cs-card"
+                    data-income="any" data-class="ug"
+                    data-caste="any" data-gender="girl"
+                    data-course="professional" data-percentile="above80"
+                    id="card-adobe">
+                    <div class="card-badge badge-cs">Adobe</div>
+                    <div class="card-amount">₹1,00,000 + Internship</div>
+                    <h3>Adobe Women in Technology Scholarship</h3>
+                    <p>For outstanding female students in CS/IT. Includes financial support, Creative Cloud subscription, and internship opportunities at Adobe India.</p>
+                    <div class="card-tags">
+                        <span class="tag tag-cs">CS / IT</span>
+                        <span class="tag tag-merit">Women in Tech</span>
+                        <span class="tag tag-class">B.Tech CS/IT</span>
+                    </div>
+                    <div class="card-details">
+                        <div class="detail-row"><span class="detail-icon">⏳</span><span>1 year + internship opportunity</span></div>
+                        <div class="detail-row"><span class="detail-icon">📋</span><span>Female; CS/IT branch only</span></div>
+                        <div class="detail-row"><span class="detail-icon">🌐</span><span>Apply via adobe.com/scholarships</span></div>
+                    </div>
+                    <a class="btn btn-cs" id="btn-private-adobe" href="https://www.adobe.com/" target="_blank">Apply →</a>
                 </div>
 
             </div>
