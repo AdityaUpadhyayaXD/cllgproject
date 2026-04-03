@@ -1,19 +1,28 @@
 const themeToggleBtn = document.getElementById('theme-toggle');
 const root = document.documentElement;
 
-// Check for saved theme
+// Light mode is default — only apply dark if explicitly saved
 const savedTheme = localStorage.getItem('theme');
-if (savedTheme) {
-    root.setAttribute('data-theme', savedTheme);
-    themeToggleBtn.textContent = savedTheme === 'light' ? '🌙' : '🌞';
+if (savedTheme === 'dark') {
+    root.setAttribute('data-theme', 'dark');
+    themeToggleBtn.textContent = '🌞';
+} else {
+    // Ensure light mode (default)
+    root.removeAttribute('data-theme');
+    themeToggleBtn.textContent = '🌙';
 }
 
 themeToggleBtn.addEventListener('click', () => {
-    const currentTheme = root.getAttribute('data-theme') || 'dark';
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    root.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
-    themeToggleBtn.textContent = newTheme === 'light' ? '🌙' : '🌞';
+    const isDark = root.getAttribute('data-theme') === 'dark';
+    if (isDark) {
+        root.removeAttribute('data-theme');
+        localStorage.setItem('theme', 'light');
+        themeToggleBtn.textContent = '🌙';
+    } else {
+        root.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+        themeToggleBtn.textContent = '🌞';
+    }
 });
 
 // Mobile Menu Toggle
